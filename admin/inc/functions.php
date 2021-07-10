@@ -9,7 +9,6 @@
         static $conn;        
         if( $conn == NULL ){
             $conn = mysqli_connect($GLOBALS['host'], $GLOBALS['username'], $GLOBALS['password'], $GLOBALS['database']);        
-            echo("New connection established");    
         }
         return $conn;
     }
@@ -82,4 +81,10 @@
     function getInactiveOrders(){}
 
     function logout(){}
+
+
+
+
+    // Arrays
+    
 ?>
