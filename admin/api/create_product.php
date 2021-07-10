@@ -32,9 +32,12 @@
 		$product_link = stripslashes($product[23]['value']);
 		$model_no = stripslashes($product[24]['value']);
 		
-		echo $date = date("Y-m-d");
+		$date = date("Y-m-d");
 
-		$query = mysqli_query($conn, "INSERT INTO `products` VALUES('','$product_name','$product_description','$product_link','','$brand','$product_type','$frame_type','$frame_shape','$model_no','$frame_size','$frame_width','$frame_dimensions','$frame_colour','$weight','$weight_group','$frame_material','$frame_temple_material','$product_warranty','$gender','$height','$condition','$frame_temple_colour','$date','$date','','',0)") or die(mysqli_error($conn));
+		if( $product_type == "computer glasses" ){
+			$query = mysqli_query($conn, "INSERT INTO `products` VALUES('','$product_name','$product_description','$product_link','','$brand','$product_type','$computer_glasses','$prescription','$prescription_lens','$frame_type','$frame_shape','$model_no','$frame_size','$frame_width','$frame_dimensions','$frame_colour','$weight','$weight_group','$frame_material','$frame_temple_material','$product_warranty','$gender','$height','$condition','$frame_temple_colour','$date','$date','','',0)") or die(mysqli_error($conn));
+		}
+		$query = mysqli_query($conn, "INSERT INTO `products` VALUES('','$product_name','$product_description','$product_link','','$brand','$product_type','$computer_glasses','$prescription','$prescription_lens','$frame_type','$frame_shape','$model_no','$frame_size','$frame_width','$frame_dimensions','$frame_colour','$weight','$weight_group','$frame_material','$frame_temple_material','$product_warranty','$gender','$height','$condition','$frame_temple_colour','$date','$date','','',0)") or die(mysqli_error($conn));
 		// if ( $query ) {				
 		// 	$lastinsertid = mysqli_insert_id($conn);		
 		// 	$response = array();				

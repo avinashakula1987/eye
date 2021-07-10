@@ -18,29 +18,33 @@ $(document).ready(function(){
     $('#computer_glasses').append(computer_glasses_drops);
     $('#contact_lens').append(contact_lenstypes_drops);
     $('#prescription_lens').append(prescription_Lenstypes_drops);
-    $('#prescription').append(prescription_drops);                
+    $('#prescription').append(prescription_drops);
 
     const hideAllButDefaults = function(){
-        $('.frame_props, .computer_glasses_props, .contact_lens_props, .prescription_lens_props').hide();
+        $('.frame_props, .computer_glasses_props, .contact_lens_props, .prescription_props, .prescription_lens_props').hide();
     }
 
     hideAllButDefaults();            
 
     $(document).on('change', '#product_type', function(){
-        if( ["frames","sunglasses"].includes($(this).val()) ){
+        if( ["frames"].includes($(this).val()) ){
+            hideAllButDefaults();
+            $('.frame_props').show();
+        }else if( ["sunglasses"].includes($(this).val()) ){
             hideAllButDefaults();
             $('.frame_props').show();
         }else if( ["computer glasses"].includes($(this).val()) ){
             hideAllButDefaults();
-            $('.computer_glasses_props').show();                     
+            $('.computer_glasses_props, .frame_props').show();                     
         }else if( ["contact lens"].includes($(this).val()) ){
             hideAllButDefaults();
             $('.contact_lens_props').show(); 
         }else if( ["prescription lens"].includes($(this).val()) ){
             hideAllButDefaults();
-            $('.prescription_lens_props').show(); 
-        }else{
-            $('.frame_props').hide();
+            $('.prescription_lens_props, .frame_props').show(); 
+        }else if( ["accessories"].includes($(this).val()) ){
+            //$('.computer_glasses_props, .prescription_lens_props, .contact_lens_props, .frame_props').hide();
+            hideAllButDefaults();
         }
     });
     
@@ -51,6 +55,10 @@ $(document).ready(function(){
     
     $('#product_type').change(function(){
         clearForm();
+    });
+    
+    $('#contact_lens').change(function(){        
+        $(this).val() == "clear" ? $('.prescription_props').show() : $('.prescription_props').hide();
     });
     
     $('#productForm').submit(function(e){

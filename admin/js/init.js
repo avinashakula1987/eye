@@ -10,7 +10,7 @@ const frame_weightGroup_drops = dropDowns.range_jump_dropdowns(0, 1500, "gm", 10
 const frame_material_drops = dropDowns.data_dropdowns("Frame Material",["TR","ultem","titanium","nickel", "metal alloys", "acetate", "propionate", "stainless steel", "aluminum"]);
 const frame_temple_material_drops = dropDowns.data_dropdowns("Frame Temple Material",["metal","acetate"]);
 const frame_height_drops = dropDowns.range_dropdowns(20,65,"mm","Frame Height");
-const frame_condition_drops = dropDowns.data_dropdowns("Frame Condition",["new","used"]);
+const frame_condition_drops = dropDowns.data_dropdowns("Condition",["new","used"]);
 const frame_temple_colours_drops = dropDowns.data_dropdowns("Frame Temple Colour",["red","green","blue","white","black","purple","brown","pink","yellow","orange","silveer","grey","voilet"]);
 
 // computer glasses

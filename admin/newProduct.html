@@ -9,7 +9,7 @@
         <title>New Product</title>
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+        <link href="css/sb-admin-2.css" rel="stylesheet" />
         <script type='text/JavaScript' src='js/array.js'></script>
         <script type='text/JavaScript' src='js/init.js'></script>
     </head>
@@ -76,7 +76,8 @@
                             <h6 class="collapse-header">Product Pages</h6>
                             <a class="collapse-item" href="newProduct.html">New Product</a>
                             <a class="collapse-item" href="products.html" >Products</a>
-                            <a class="collapse-item" href="utilities-animation.html" onclick='return false;'>Inactive Products</a>
+                            <a class="collapse-item" href="inactive_products.html" >Inactive Products</a>
+                            <!-- <a class="collapse-item" href="utilities-animation.html" onclick='return false;'>Inactive Products</a> -->
                         </div>
                     </div>
                 </li>
@@ -345,112 +346,131 @@
                     <!-- End of Topbar -->
 
                     <div class="container-fluid">
-                        <h1 class="h3 mb-2 text-gray-800">New Product</h1>                    
-                        <div class="card o-hidden border-0 shadow-lg my-5">
-                            <div class="card-body p-0">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="p-5">                                    
-                                            <form class="user" id="productForm">
-                                                <div class="row">
-                                                    <div class="col-sm-6 default_props">
-                                                        <div class="form-group"><select class="form-control" name="product_type" id="product_type"></select></div>
-                                                    </div>
-                                                    <div class="col-sm-6 default_props">
-                                                        <div class="form-group"><select class="form-control input" name="brand" id="brand"></select></div>    
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-6 computer_glasses_props">
-                                                        <div class="form-group"><select class="form-control input" name="computer_glasses" id="computer_glasses"></select></div>
-                                                    </div>
-                                                    <div class="col-sm-6 contact_lens_props">
-                                                        <div class="form-group"><select class="form-control input" name="contact_lens" id="contact_lens"></select></div>    
-                                                    </div>
-                                                    <div class="col-sm-6 prescription_lens_props">
-                                                        <div class="form-group"><select class="form-control input" name="prescription_lens" id="prescription_lens"></select></div>
-                                                    </div>
-                                                    <div class="col-sm-6 prescription_props">
-                                                        <div class="form-group"><select class="form-control input" name="prescription" id="prescription"></select></div>    
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group default_props">
-                                                    <input type="text" class="form-control input2" id="product_name" name="product_name" placeholder="Product Name" />
-                                                </div>
-                                                <div class="form-group default_props">
-                                                    <textarea class="form-control input2" id="product_description" name="product_description" placeholder="Product Description"></textarea>
-                                                </div>								
-                                                <div class="form-group row">
-                                                    <div class="col-sm-4 frame_props">
-                                                        <div class="form-group"><select class="form-control input" name="frame_type" id="frame_type"></select></div>  
-                                                    </div>
-                                                    <div class="col-sm-4 frame_props">
-                                                        <div class="form-group"><select class="form-control input" name="frame_shape" id="frame_shape"></select></div>
-                                                    </div>
-                                                    <div class="col-sm-4 frame_props">
-                                                        <div class="form-group"><select class="form-control input" name="frame_size" id="frame_size"></select></div>
-                                                    </div>
-                                                    <div class="col-sm-4 frame_props">
-                                                        <div class="form-group"><select class="form-control input" name="frame_width" id="frame_width"></select></div>
-                                                    </div>                                    
-                                                    <div class="col-sm-4 frame_props">
-                                                        <div class="form-group"><select class="form-control input" name="frame_dimensions" id="frame_dimensions"></select></div>
-                                                    </div>									
-                                                    <div class="col-sm-4 frame_props">
-                                                        <div class="form-group"><select class="form-control input" name="frame_colour" id="frame_colour"></select></div>
-                                                    </div>
-                                                    <div class="col-sm-4 default_props">
-                                                        <div class="form-group"><select class="form-control input" name="weight" id="weight"></select></div>                                       
-                                                    </div>
-                                                    <div class="col-sm-4 default_props">
-                                                        <div class="form-group"><select class="form-control input" name="weight_group" id="weight_group"></select></div>
-                                                    </div>
-                                                    <div class="col-sm-4 frame_props">
-                                                        <div class="form-group"><select class="form-control input" name="frame_material" id="frame_material"></select></div>
-                                                    </div>
-                                                    <div class="col-sm-4 frame_props">
-                                                        <div class="form-group"><select class="form-control input" name="frame_temple_material" id="frame_temple_material"></select></div>
-                                                    </div>
-                                                    <div class="col-sm-4 frame_props">
-                                                        <div class="form-group"><select class="form-control input" name="frame_temple_colour" id="frame_temple_colour"></select></div>
-                                                    </div>                                   
-                                                    <div class="col-sm-4 default_props">
-                                                        <div class="form-group"><select class="form-control input" name="height" id="height"></select></div>
-                                                    </div>
-                                                    <div class="col-sm-4 default_props">
-                                                        <div class="form-group"><select class="form-control input" name="condition" id="condition"></select></div>
-                                                    </div>
-                                                    <div class="col-sm-4 default_props">
-                                                        <div class="form-group"><select class="form-control input" name="gender" id="gender"></select></div>
-                                                    </div>
-                                                    <div class="col-sm-4 default_props">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control input2" id="product_warranty" name="product_warranty" placeholder="Product Warranty">
-                                                        </div>
-                                                    </div>                                    
-                                                    <div class="col-sm-8 default_props">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control input2" id="product_link" name="product_link" placeholder="Product Link">
-                                                        </div>                                   
-                                                    </div>  
-                                                    <div class="col-sm-4 default_props">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control input2" id="model_no" name="model_no" placeholder="Model No">
-                                                        </div>
-                                                    </div>                                 
-                                                </div>
-                                                <button class="btn btn-primary btn-user btn-block">
-                                                    Create Product
-                                                </button>
-                                                <hr>
-                                                
-                                            </form>                                
+                        <h1 class="h3 mb-2 text-gray-800">New Product</h1>  
+                        <form class="user" id="productForm">                  
+                            <div class="card o-hidden border-0 shadow-lg my-3">                            
+                                <div class="p-3">                                    
+                                    <div class="row">
+                                        <div class="col-sm-3 default_props">
+                                            <div class="form-group"><select class="form-control" name="product_type" id="product_type"></select></div>
                                         </div>
+                                        <div class="col-sm-3 default_props">
+                                            <div class="form-group"><select class="form-control input" name="brand" id="brand"></select></div>    
+                                        </div>
+                                        <div class="col-sm-3 computer_glasses_props">
+                                            <div class="form-group"><select class="form-control input" name="computer_glasses" id="computer_glasses"></select></div>
+                                        </div>
+                                        <div class="col-sm-3 contact_lens_props">
+                                            <div class="form-group"><select class="form-control input" name="contact_lens" id="contact_lens"></select></div>    
+                                        </div>
+                                        <div class="col-sm-3 prescription_lens_props">
+                                            <div class="form-group"><select class="form-control input" name="prescription_lens" id="prescription_lens"></select></div>
+                                        </div>
+                                        <div class="col-sm-3 prescription_props">
+                                            <div class="form-group"><select class="form-control input" name="prescription" id="prescription"></select></div>    
+                                        </div>
+
+
                                     </div>
-                                </div>
+                                </div>                            
                             </div>
-                        </div>
+
+
+                            <div class="card o-hidden border-0 shadow-lg my-3">                            
+                                <div class="p-3">  
+                                    <div class="row">                            
+                                        <div class="col-sm-12 default_props">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input2" id="product_name" name="product_name" placeholder="Product Name" />
+                                            </div>
+                                        </div><br /><br />
+                                        <div class="col-sm-12 default_props">    
+                                            <div class="form-group">
+                                                <textarea class="form-control input2" id="product_description" name="product_description" placeholder="Product Description"></textarea>
+                                            </div>	
+                                        </div>	
+                                    </div>
+                                    
+                                    
+                                </div>                            
+                            </div>
+
+
+                            <div class="card o-hidden border-0 shadow-lg my-3">                            
+                                <div class="p-3"> 
+                                    <div class="row">
+                                        <div class="col-sm-2 frame_props">
+                                            <div class="form-group"><select class="form-control input" name="frame_type" id="frame_type"></select></div>  
+                                        </div>
+                                        <div class="col-sm-2 frame_props">
+                                            <div class="form-group"><select class="form-control input" name="frame_shape" id="frame_shape"></select></div>
+                                        </div>
+                                        <div class="col-sm-2 frame_props">
+                                            <div class="form-group"><select class="form-control input" name="frame_size" id="frame_size"></select></div>
+                                        </div>
+                                        <div class="col-sm-2 frame_props">
+                                            <div class="form-group"><select class="form-control input" name="frame_width" id="frame_width"></select></div>
+                                        </div>                                    
+                                        <div class="col-sm-2 frame_props">
+                                            <div class="form-group"><select class="form-control input" name="frame_dimensions" id="frame_dimensions"></select></div>
+                                        </div>									
+                                        <div class="col-sm-2 frame_props">
+                                            <div class="form-group"><select class="form-control input" name="frame_colour" id="frame_colour"></select></div>
+                                        </div>
+                                        <div class="col-sm-2 frame_props">
+                                            <div class="form-group"><select class="form-control input" name="weight" id="weight"></select></div>                                       
+                                        </div>
+                                        <div class="col-sm-2 frame_props">
+                                            <div class="form-group"><select class="form-control input" name="weight_group" id="weight_group"></select></div>
+                                        </div>
+                                        <div class="col-sm-2 frame_props">
+                                            <div class="form-group"><select class="form-control input" name="frame_material" id="frame_material"></select></div>
+                                        </div>
+                                        <div class="col-sm-2 frame_props">
+                                            <div class="form-group"><select class="form-control input" name="frame_temple_material" id="frame_temple_material"></select></div>
+                                        </div>
+                                        <div class="col-sm-2 frame_props">
+                                            <div class="form-group"><select class="form-control input" name="frame_temple_colour" id="frame_temple_colour"></select></div>
+                                        </div>                                   
+                                        <div class="col-sm-2 frame_props">
+                                            <div class="form-group"><select class="form-control input" name="height" id="height"></select></div>
+                                        </div>
+                                                                        
+                                    </div>
+                                </div>                            
+                            </div> 
+                            
+                        
+
+                            <div class="card o-hidden border-0 shadow-lg my-3">   
+                                <div class="p-3"> 
+                                    <div class="row">                                                        
+                                        <div class="col-sm-2 default_props">
+                                            <div class="form-group"><select class="form-control input" name="condition" id="condition"></select></div>
+                                        </div>
+                                        <div class="col-sm-2 default_props">
+                                            <div class="form-group"><select class="form-control input" name="gender" id="gender"></select></div>
+                                        </div>
+                                        <div class="col-sm-2 default_props">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input2" id="product_warranty" name="product_warranty" placeholder="Product Warranty">
+                                            </div>
+                                        </div>                                    
+                                        <div class="col-sm-6 default_props">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input2" id="product_link" name="product_link" placeholder="Product Link">
+                                            </div>                                   
+                                        </div>  
+                                        <div class="col-sm-3 default_props">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input2" id="model_no" name="model_no" placeholder="Model No">
+                                            </div>
+                                        </div> 
+                                    </div>                            
+                                </div>                            
+                            </div>
+                            <button class="btn btn-primary btn-user">Create Product</button>
+                        </form>
                     </div>
                 </div>
             </div>
